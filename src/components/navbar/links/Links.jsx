@@ -23,22 +23,7 @@ const Links = () => {
             <div className={styles.links}>
                 {links.map(
                     link => (<NavLink item={link} key={link.title}/>)
-                )}{
-                    session ? (
-                    <>
-                            
-                    {
-                        isAdmin && (
-                            <NavLink item={{ title: "Admin", path: "/admin" }} />
-                        )
-                    }
-                            <button className={styles.logout}>logout</button>
-                            
-                    </>
-                ): (
-                    <NavLink item={{ title: "Login", path: "/login" }} />
-                )
-                }
+                )}
             </div>
             <Image className={ styles.menuButton} src="/menu.png" alt="open menu" width={30} height={ 30} onClick={() => setOpen(prev => !prev)}/>
             {

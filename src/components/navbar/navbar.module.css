@@ -7,6 +7,7 @@ font-style: normal;
 }
 
 .logo{
+    border-radius: 50%;
     font-size: 30px;
     font-weight: bold;
     font-style: normal;

@@ -1,10 +1,7 @@
-// "use client";
+// src/app/contact/page.jsx
 import Image from "next/image";
 import styles from "./contact.module.css";
-// import dynamic from "next/dynamic";
-// import HydrationTest from "@/components/hydrationTest";
-
-// const HydrationTestNoSSR = dynamic(()=>import("@/components/hydrationTest"), {ssr: false})
+import ContactForm from "@/components/form/contactForm";
 
 export const metadata = {
   title: "Contact Page",
@@ -12,31 +9,13 @@ export const metadata = {
 };
 
 const ContactPage = () => {
-  // const a = Math.random();
-
-  // console.log(a);
-
   return (
     <div className={styles.container}>
-      <div className={styles.imgContainer}>
+      {/*<div className={styles.imgContainer}>
         <Image src="/contact.png" alt="" fill className={styles.img} />
-      </div>
+      </div>*/}
       <div className={styles.formContainer}>
-        {/* <HydrationTestNoSSR/> */}
-        {/* <div suppressHydrationWarning>{a}</div> */}
-        <form action="" className={styles.form}>
-          <input type="text" placeholder="Name and Surname" />
-          <input type="text" placeholder="Email Address" />
-          <input type="text" placeholder="Phone Number (Optional)" />
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Message"
-          ></textarea>
-          <button>Send</button>
-        </form>
+        <ContactForm /> {/* 使用 Client Component */}
       </div>
     </div>
   );
