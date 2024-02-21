@@ -45,7 +45,7 @@ const ContactForm = () => {
     if (response.ok) {
         setMessageSent(true);
         setFormData(initialFormState);
-        console.log('Contact information saved successfully');
+        //console.log('Contact information saved successfully');
         setTimeout(() => setMessageSent(false), 5000);
       } else {
         console.error('Failed to save contact information');

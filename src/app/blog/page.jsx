@@ -5,9 +5,12 @@ import { useState } from "react";
 import PostCard from "@/components/postCard/postCard";
 import styles from "./blog.module.css";
 
+
 const getData = async () => { 
-  const API_URL = process.env.API_URL;
-  const url = API_URL; // Assuming you're fetching from the same origin
+  const localHost = process.env.REACT_APP_LOCAL_HOST;
+  const url = `${localHost}/api/posts`;
+  //const url = `http://localhost:3000/api/posts`// Assuming you're fetching from the same origin
+  console.log("URL:", url);
   const res = await fetch(url, { 
     method: 'GET', // Use a valid HTTP method, typically 'GET' for retrieving data
     cache: 'no-store' // Ensures the response is not cached

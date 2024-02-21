@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 export default async function handler(req, res) {
   try {
     const posts = await prisma.post.findMany();
-    console.log(posts); 
+    //console.log(posts); 
     res.status(200).json(posts); 
   } catch (e) {
     console.error(e); // 打印錯誤到控制台

@@ -7,6 +7,10 @@ const nextConfig = {
                 hostname: "images.pexels.com"
             }
         ]
+    },
+
+    env: {
+        REACT_APP_LOCAL_HOST: process.env.REACT_APP_LOCAL_HOST
     }
 }
 

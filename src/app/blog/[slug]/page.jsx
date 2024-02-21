@@ -5,14 +5,13 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 const getData = async (slug) => {
-  const apiUrl = process.env.API_URL;
-  const url = `${apiUrl}/${slug}`;
+  const localHost = process.env.REACT_APP_LOCAL_HOST;
+  const url = `${localHost}/api/${slug}`;
 
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) { 
     throw new Error("Failed to fetch data");
   }
-  
   return res.json();
 };
 
