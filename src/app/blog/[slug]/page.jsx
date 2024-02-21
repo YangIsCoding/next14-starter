@@ -1,5 +1,6 @@
 import styles from "./singlePost.module.css";
 import Image from "next/image";
+import { marked } from 'marked';
 
 const getData = async (slug) => {
   const url = `http://localhost:3000/api/${slug}`;
@@ -19,7 +20,9 @@ const SinglePostPage =async ({ params}) => {
 
   const post = await getData(slug);
 
-   console.log("post.user:",post.user.userName);
+  console.log("post.user:", post.user.userName);
+  const postBodyHTML = post.body;
+  console.log("postBodyHTML:", postBodyHTML);
 
 
   return (
@@ -41,9 +44,7 @@ const SinglePostPage =async ({ params}) => {
             <span className={styles.detailValue}>{post.postTime}</span>
           </div>
         </div>
-        <div className={styles.content}>
-          <p>{ post.body}</p>
-        </div>
+        {<div  dangerouslySetInnerHTML={{ __html: postBodyHTML }}></div>}
       </div>
     </div>
   );
