@@ -3,7 +3,7 @@ import styles from "./postCard.module.css"
 import Link from "next/link"
 
 const PostCard = ({ post }) => {
-  console.log(post);
+  //console.log(post);
   return (
     <div className={styles.container}>
 
