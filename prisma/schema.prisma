@@ -14,7 +14,8 @@ model post {
   id       Int     @id @unique @default(autoincrement())
   userId    Int      
   title     String
-  body      String
+  filePath      String
+  shortdesc  String
   postTime  String
   postImg   String
   user      user    @relation(fields: [userId], references: [userId])

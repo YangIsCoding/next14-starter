@@ -2,6 +2,7 @@
 import styles from './home.module.css';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation'
+import Link from 'next/link';
 
 
 
@@ -26,10 +27,12 @@ const Home = () => {
         <button className={styles.button} onClick={handleClick}>Learn More</button>
         <button className={ styles.button} onClick={handleContactClick}>Contact</button>
       </div>
-      <div className={styles.brands}>
-          <Image src="/instagram.png" alt="" width="50" height="50" className={styles.brandImg} />
-          <Image src="/github.png" alt=""  width="50" height="50" className={styles.brandImg} />
-          <Image src="/linkedin.png" alt=""  width="50" height="50" className={styles.brandImg}/>
+        <div className={styles.brands}>
+          <a href="https://www.instagram.com/yong881122/" target="_blank" rel="noopener noreferrer">
+              <Image src="/instagram.png" alt="Follow us on Instagram" width={100} height={50} className={styles.brandImg} />
+          </a>
+          <Link href="https://github.com/YangIsCoding" passHref><Image src="/github.png" alt=""  width="100" height="50" className={styles.brandImg} /></Link>
+          <Link href="https://www.linkedin.com/in/pin-yang-chen-445bba288/" passHref><Image src="/linkedin.png" alt=""  width="100" height="50" className={styles.brandImg}/></Link>
       </div>
     </div>
     <div className={styles.imgContainer}>

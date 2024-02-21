@@ -1,6 +1,8 @@
 import styles from "./singlePost.module.css";
 import Image from "next/image";
 import { marked } from 'marked';
+import { promises as fs } from 'fs';
+import path from 'path';
 
 const getData = async (slug) => {
   const url = `http://localhost:3000/api/${slug}`;
@@ -12,7 +14,6 @@ const getData = async (slug) => {
   return res.json();
 };
 
-
 const SinglePostPage =async ({ params}) => { 
   console.log(params);
 
@@ -21,9 +22,10 @@ const SinglePostPage =async ({ params}) => {
   const post = await getData(slug);
 
   console.log("post.user:", post.user.userName);
-  const postBodyHTML = post.body;
-  console.log("postBodyHTML:", postBodyHTML);
-
+  const postPath = post.filePath;
+  console.log("postPath:", postPath);//posts/post1.md
+  const data = await fs.readFile(postPath, 'utf8');
+  const dataHTML = marked(data);
 
   return (
     <div className={styles.container}>
@@ -44,7 +46,7 @@ const SinglePostPage =async ({ params}) => {
             <span className={styles.detailValue}>{post.postTime}</span>
           </div>
         </div>
-        {<div  dangerouslySetInnerHTML={{ __html: postBodyHTML }}></div>}
+        <article dangerouslySetInnerHTML={{__html:dataHTML}} />
       </div>
     </div>
   );

@@ -3,7 +3,8 @@ CREATE TABLE "post" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "userId" INTEGER NOT NULL,
     "title" TEXT NOT NULL,
-    "body" TEXT NOT NULL,
+    "filePath" TEXT NOT NULL,
+    "shortdesc" TEXT NOT NULL,
     "postTime" TEXT NOT NULL,
     "postImg" TEXT NOT NULL,
     CONSTRAINT "post_userId_fkey" FOREIGN KEY ("userId") REFERENCES "user" ("userId") ON DELETE RESTRICT ON UPDATE CASCADE

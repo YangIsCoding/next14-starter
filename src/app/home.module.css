@@ -48,9 +48,8 @@
     display: flex;
     justify-content: space-between;
 }
-
 .brandImg {
-  width: 30%; /* 調整圖片的寬度以平分空間 */
+  width: 100%; /* 調整圖片的寬度以平分空間 */
 }
 
 .imgContainer{

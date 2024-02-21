@@ -19,7 +19,7 @@ const PostCard = ({ post }) => {
       <div className={styles.bottom}>
         <h1 className={styles.title}>{post.title}</h1>
         <p className={styles.desc}>
-          {post.body.length > 25 ? post.body.substring(0, 25) + "..." : post.body}
+          {post.shortdesc.length > 25 ? post.shortdesc.substring(0, 25) + "..." : post.shortdesc}
         </p>
         <Link className={styles.link} href={`/blog/${post.id}`}>READ MORE</Link>
       </div>
