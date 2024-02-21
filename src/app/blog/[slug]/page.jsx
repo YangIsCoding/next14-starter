@@ -5,7 +5,8 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 const getData = async (slug) => {
-  const url = `http://localhost:3000/api/${slug}`;
+  const apiUrl = process.env.API_URL;
+  const url = `${apiUrl}/${slug}`;
 
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) { 
