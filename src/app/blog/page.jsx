@@ -6,7 +6,8 @@ import PostCard from "@/components/postCard/postCard";
 import styles from "./blog.module.css";
 
 const getData = async () => { 
-  const url = 'http://localhost:3000/api/posts'; // Assuming you're fetching from the same origin
+  const API_URL = process.env.API_URL;
+  const url = API_URL; // Assuming you're fetching from the same origin
   const res = await fetch(url, { 
     method: 'GET', // Use a valid HTTP method, typically 'GET' for retrieving data
     cache: 'no-store' // Ensures the response is not cached
